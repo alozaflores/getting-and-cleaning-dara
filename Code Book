@@ -1,0 +1,39 @@
+
+CodeBook for Course Getting and Cleaning the Data Coursera
+
+Initial Data
+
+    Data file: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+    CodeBook: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+The Data file contains the following:
+	X files that contains the data from the activities both the test and the train data (main data files)
+    y files that get the activities to each row on the X files
+    subject: the subjects on which each row of X was measured
+	labels> Features and activity_labels
+
+
+Data load
+	
+    we load the following object from the raw data files
+	X_test
+	X_train
+	Y_test
+	Y_train
+	subject_test
+	subject_train
+	
+	
+Transformation
+	The activity labels are set as the names for teh columns
+	The activities and subject are joined to the X files separately
+    The X files are merged with an rbind preserving all columns mergeData
+	mergeData is transformed into a data.table in myDT
+	A subset of the columns with std and mean is performed and stored in myDTsubset
+	
+	Finally the result is teh aplication of the agreggate function on myDTsubset grouped by subject and activity
+	The result is stored in myNewTidyData
+	
+	
+	Te result is not written to disk automatically, you can do it from the workspace of R or add final lines to the script
+	
