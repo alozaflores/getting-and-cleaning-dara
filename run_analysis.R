@@ -16,11 +16,12 @@ X_train <- read.table("UCI HAR Dataset\\train\\X_train.txt")
 Y_train <- read.table("UCI HAR Dataset\\train\\Y_train.txt")
 subject_train <- read.table("UCI HAR Dataset\\train\\subject_train.txt")
 
-activity_labes <- read.table("activity_labels.txt")
+
 
 #To make it more readable, we load the features.txt that contains the labes this is also so we can select
 #only the mean and the std later on
-labels_files <- read.table("features.txt")
+activity_labes <- read.table("UCI HAR Dataset\\activity_labels.txt")
+labels_files <- read.table("UCI HAR Dataset\\features.txt")
 
 #The labesl that were loaded are assigned to the data.frames from train and test so it is meaningfull in the result
 #we preserve the same labels from the original data so it remains like in the origin and further reference may be done
